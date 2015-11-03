@@ -23,7 +23,7 @@ def _get_file_dependencies(filename, regex):
     for line in current_file:
         regex_match = re.search(regex, line)
         if regex_match:
-            matches += [regex_match.group(1)]      
+            matches += [regex_match.groups()[-2]]      
     return matches
     
 def parse(directory, regex):
