@@ -1,5 +1,12 @@
-import matplotlib.pyplot as plt
-import networkx as nx
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    print 'module matplotlib is required'
+    
+try:
+    import networkx as nx
+except ImportError:
+    print 'module networkx is required'
 
 G=nx.Graph()
 
