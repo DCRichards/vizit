@@ -13,9 +13,15 @@ by DCRichards
 """
 
 import os
+
 import parser
 import graphs
-from languages import Languages
+import cli
+import languages
+
+def _create_graph(directory, lang):
+    graphs.generate(parser.parse(directory, lang))
     
-def main(dir, lang):
-    graphs.generate(parser.parse(dir, lang))
+def main():
+    cli_args = cli.get_args()
+    _create_graph(cli_args[0], languages.get(cli_args[1]))

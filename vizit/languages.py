@@ -1,6 +1,11 @@
-def enum(**enums):
-    return type('Enum', (), enums)
+import cli
 
-Languages = enum(C = '(#include|#import)\s("|<)(.*\..*)("|>)',
-                OBJECTIVEC = '(#include|#import)\s("|<)(.*\..*)("|>)',
-                PYTHON = '^(from|import)\s(\w*\.?\w*)(.*)')
+languages = {'c': '#include|#import)\s("|<)(.*\..*)("|>)',
+                'objectivec': '(#include|#import)\s("|<)(.*\..*)("|>)',
+                'python': '^(from|import)\s(\w*\.?\w*)(.*)'}
+
+def get(lang_string):
+    if lang_string in languages.keys():
+        return languages[lang_string]
+    else:
+        cli.show_help('Unsupported or unknown language')

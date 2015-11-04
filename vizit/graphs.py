@@ -21,6 +21,7 @@ def _draw_graph():
     nx.draw_networkx_nodes(G,pos,node_size=1000,node_color='w')
     nx.draw_networkx_edges(G,pos,edgelist=G.edges(),width=6,alpha=0.5,edge_color='k')
     nx.draw_networkx_labels(G,pos,font_size=12,font_family='sans-serif')
+
     plt.axis('off')
     plt.show()
     
