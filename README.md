@@ -4,15 +4,15 @@ A simple dependency visualisation project
 
 ## About
 
-VizIt represents dependencies in programming languages using a network graph.
-
-![](https://raw.githubusercontent.com/DCRichards/vizit/master/examples/example_graph.png)
-
-This project exists for a number of reasons:
+VizIt represents dependencies in programming languages using a network graph. This project exists for a number of reasons:
 
 * To help me learn Python
 * To actually be useful in visualising dependencies 
 * ...um, because I just like programming
+
+## Examples
+
+![](https://raw.githubusercontent.com/DCRichards/vizit/master/examples/example_graph.png)
 
 ## Setup
 
