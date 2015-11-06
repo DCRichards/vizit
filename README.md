@@ -12,6 +12,8 @@ VizIt represents dependencies in programming languages using a network graph. Th
 
 ## Examples
 
+Usage and more detailed information coming soon. For now, here's an example from the prototype:
+
 ![](https://raw.githubusercontent.com/DCRichards/vizit/master/examples/example_graph.png)
 
 ## Setup
