@@ -1,6 +1,6 @@
 import cli
 
-languages = {'c': '#include|#import)\s("|<)(.*\..*)("|>)',
+languages = {'c': '(#include|#import)\s("|<)(.*\..*)("|>)',
                 'objectivec': '(#include|#import)\s("|<)(.*\..*)("|>)',
                 'python': '^(from|import)\s(\w*\.?\w*)(.*)'}
 

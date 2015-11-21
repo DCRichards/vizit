@@ -8,6 +8,10 @@ def _get_files_in_path(filepath):
 def _get_folders_in_path(filepath):
     return [ os.path.join(filepath, folder) for folder in os.listdir(filepath) if os.path.isdir(os.path.join(filepath, folder)) ]
 
+def strip_file_ext(filename):
+    stripped = filename.split('.')[0]
+    return stripped if stripped != '' else filename
+
 def _get_all_files(files, dirs):
     if not dirs:
         return files
@@ -29,5 +33,6 @@ def _get_file_dependencies(filename, regex):
 def parse(directory, regex):
     dependency_list = []
     for file in _get_all_files([],[directory]):
-        dependency_list += [(os.path.basename(file),dependency) for dependency in _get_file_dependencies(file, regex)]
+        filename = strip_file_ext(os.path.basename(file))
+        dependency_list += [(filename,strip_file_ext(dependency)) for dependency in _get_file_dependencies(file, regex)]
     return dependency_list

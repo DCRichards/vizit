@@ -16,14 +16,11 @@ VizIt represents dependencies in programming languages using a network graph. Th
 
 ## Setup
 
-Install dependencies:
+Installation using pip:
 
-    sudo pip install networkx
-    
-Run the setup script:
-
-	cd vizit
-	sudo pip install -e vizit
+    git clone https://github.com/DCRichards/vizit.git
+    cd vizit
+    sudo pip install -e vizit/
 
 ## Libraries
 

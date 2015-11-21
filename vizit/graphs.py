@@ -18,14 +18,16 @@ def _add_edges(edges):
 def _draw_graph():
     # declaring this as a global gives an error so define here
     pos=nx.spring_layout(G,iterations=25)
-    nx.draw_networkx_edges(G,pos,edgelist=G.edges(),width=5,alpha=0.5,edge_color='k')
-    nx.draw_networkx_labels(G,pos,font_size=10,font_family='sans-serif')
+    nx.draw_networkx_edges(G,pos,edgelist=G.edges(),width=1,edge_color='k')
+    nx.draw_networkx_labels(G,pos,font_size=9,alpha=0.5,font_family='sans-serif')
     edges_list = [G.degree(node) for node in G.nodes()]
     # colour map found here: https://gist.github.com/endolith/2719900
-    nx.draw_networkx_nodes(G,pos,node_size=1000,node_color=edges_list,cmap=plt.cm.Greens)
-    
-    plt.title("Program Dependencies", color='#333333')
-    plt.axis('off')
+    nx.draw_networkx_nodes(G,pos,node_size=2000,node_color=edges_list,linewidths=None,cmap=plt.cm.cool)
+    plt.title("Program Dependencies", color='black')
+    axes = plt.gca()
+    axes.yaxis.set_visible(False)
+    axes.xaxis.set_visible(False)
+    plt.gca().set_axis_bgcolor('white')
     plt.show()
     
 def generate(edges):
