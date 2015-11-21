@@ -23,6 +23,24 @@ Installation using pip:
     git clone https://github.com/DCRichards/vizit.git
     cd vizit
     sudo pip install -e vizit/
+    
+# Usage
+
+    -h, --help    show this help message and exit
+    -v            display version information
+    -d dir        root directory to search, by default this is the current directory
+    -l language   programming language
+    
+Examples:
+
+    vizit -l python -d ~/Downloads/vizit
+    vizit -l c
+    
+Supported Languages:
+
+* Python (python)
+* C (c)
+* Objective-C (objectivec)
 
 ## Libraries
 
