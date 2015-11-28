@@ -1,3 +1,5 @@
+import json
+
 try:
     import matplotlib.pyplot as plt
 except ImportError:
@@ -5,6 +7,7 @@ except ImportError:
     
 try:
     import networkx as nx
+    from networkx.readwrite import json_graph
 except ImportError:
     print 'module networkx is required'
 
@@ -28,9 +31,23 @@ def _draw_graph():
     axes.yaxis.set_visible(False)
     axes.xaxis.set_visible(False)
     plt.gca().set_axis_bgcolor('white')
+    print 'displaying graph...\nclose Python window to exit.'
     plt.show()
     
-def generate(edges):
+def write_graph_to_json(dir):
+    try:
+        print 'writing graph JSON data to', dir
+        json.dump(json_graph.node_link_data(G), open(dir, 'w'))
+    except IOError as ioe:
+        print 'unable to access file to write JSON ', ioe
+    except Exception as exc:
+        print 'unable to write JSON ', exc
+    
+def generate(edges, jsondir):
     print 'generating graph...'
     _add_edges(edges)
+    if jsondir:
+        write_graph_to_json(jsondir)
     _draw_graph()
+    
+        

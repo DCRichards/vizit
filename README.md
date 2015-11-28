@@ -29,8 +29,9 @@ Installation using pip:
     -h, --help    show this help message and exit
     -v            display version information
     -d dir        root directory to search, by default this is the current directory
-    -l language   programming language
-    
+    -l language   programming language (*required)
+    -j json       location of a .json file to export graph data to for external display    
+
 Examples:
 
     vizit -l python -d ~/Downloads/vizit
