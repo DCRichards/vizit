@@ -37,8 +37,7 @@ d3.json("data.json", function(error, graph) {
         .enter().append("g")
         .attr("class", "node")
         .style("fill", function(d) {
-            console.log(color(d.weight*5));
-            return color(d.weight);
+            return color(d.weight*3);
         })
         .attr("r",6)
         .call(force.drag);
