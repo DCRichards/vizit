@@ -34,20 +34,21 @@ def _draw_graph():
     print 'displaying graph...\nclose Python window to exit.'
     plt.show()
     
-def write_graph_to_json(dir):
+def _write_graph_to_json():
     try:
-        print 'writing graph JSON data to', dir
-        json.dump(json_graph.node_link_data(G), open(dir, 'w'))
+        print 'writing graph JSON data'
+        json.dump(json_graph.node_link_data(G), open('./web/resc/data.json', 'w'))
     except IOError as ioe:
         print 'unable to access file to write JSON ', ioe
     except Exception as exc:
         print 'unable to write JSON ', exc
     
-def generate(edges, jsondir):
+def generate(edges, js):
     print 'generating graph...'
     _add_edges(edges)
-    if jsondir:
-        write_graph_to_json(jsondir)
-    _draw_graph()
+    if js:
+        _write_graph_to_json()
+    else:
+        _draw_graph()
     
         

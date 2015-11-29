@@ -2,7 +2,7 @@ import cli
 
 languages = {'c': '(#include|#import)\s("|<)(.*\..*)("|>)',
                 'objectivec': '(#include|#import)\s("|<)(.*\..*)("|>)',
-                'python': '^(from|import)\s(\w*\.?\w*)(.*)'}
+                'python': '(from|import)\s(\w*\.?\w*)(.*)'}
 
 def get(lang_string):
     if lang_string in languages.keys():

@@ -19,8 +19,8 @@ import graphs
 import cli
 import languages
 
-def _create_graph(directory, lang, jsondir):
-    graphs.generate(parser.parse(directory, lang), jsondir)
+def _create_graph(directory, lang, js):
+    graphs.generate(parser.parse(directory, lang), js)
     
 def main():
     cli_args = cli.get_args()

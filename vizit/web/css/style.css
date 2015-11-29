@@ -1,0 +1,58 @@
+* {
+    font-family: "Arial", sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #444;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16em;
+    margin: 1em;
+    color: #acacac;
+    background: #343434;
+    border-radius: 0.8em;
+}
+
+.sidebar .content {
+    margin-left: 1em;
+    margin-bottom: 2em;
+}
+
+.sidebar h2 {
+    color: #f8f8f8;
+    margin-bottom: 40px;
+}
+
+.footer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.footer a {
+    color: inherit;
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.node text {
+    stroke: #233;
+    stroke-width: 0.4px;
+    fill: #000;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}

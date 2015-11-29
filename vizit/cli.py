@@ -6,16 +6,15 @@ ABOUT_TEXT = 'A simple dependency visualisation tool'
 CLI_VERSION_HELP = 'display version information'
 CLI_DIR_HELP = 'root directory to search, by default this is the current directory'
 CLI_LANG_HELP = 'programming language'
-CLI_TO_JSON_DIR = 'location of a .json file to export graph data to for external display'
+CLI_JS = 'display graph in browser rather than using pyplot'
 
 parser = ArgumentParser(description=ABOUT_TEXT)
 
 def _get_parser():
-    # command line argumens
-    parser.add_argument('-v', action='version', version='v0.1.0', help=CLI_VERSION_HELP)
-    parser.add_argument('-d', action='store', dest='directory', help=CLI_DIR_HELP)
-    parser.add_argument('-l', action='store', dest='language', help=CLI_LANG_HELP)
-    parser.add_argument('-j', action='store', dest='jsonfile', help=CLI_TO_JSON_DIR)
+    parser.add_argument('-v', '--version', action='version', version='v0.1.0', help=CLI_VERSION_HELP)
+    parser.add_argument('-d', '--dir', action='store', dest='directory', help=CLI_DIR_HELP)
+    parser.add_argument('-l', '--language', action='store', dest='language', required=True, help=CLI_LANG_HELP)
+    parser.add_argument('-j', '--javascript', action='store_true', dest='js', help=CLI_JS)
     return parser.parse_args()
 
 def show_help(msg):
@@ -25,8 +24,5 @@ def show_help(msg):
 def get_args():
     args = _get_parser()
     dir = args.directory or os.getcwd()
-    if args.language:
-        return (dir, args.language, args.jsonfile)
-    else:
-        show_help('')
+    return (dir, args.language, args.js)
         

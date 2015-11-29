@@ -1,14 +1,9 @@
-var width = 1000,
-    height = 600;
+var width = window.innerWidth-100,
+    height = window.innerHeight-100;
 
 var color = d3.scale.category20();
 
-var force = d3.layout.force()
-    .charge(-120)
-    .linkDistance(30)
-    .size([width, height]);
-
-var svg = d3.select("body").append("svg")
+var svg = d3.select(".graph").append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -18,7 +13,7 @@ var force = d3.layout.force()
     .charge(-200)
     .size([width, height]);
 
-d3.json("data.json", function(error, graph) {
+d3.json("resc/data.json", function(error, graph) {
     if (error) {
       console.error(error);
     }
