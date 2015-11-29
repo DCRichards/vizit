@@ -1,4 +1,5 @@
 import json
+import server
 
 try:
     import matplotlib.pyplot as plt
@@ -48,6 +49,7 @@ def generate(edges, js):
     _add_edges(edges)
     if js:
         _write_graph_to_json()
+        server.start()
     else:
         _draw_graph()
     
