@@ -5,11 +5,11 @@ setup(
     author='DCRichards',
     author_email='',
     description='Simple dependency visualisation in Python',
-    version='0.1.1',
+    version='0.2.3',
     licence='MIT',
     url='https://github.com/DCRichards/vizit',
     packages=find_packages(),
-    install_requires=['networkx', 'matplotlib'],
+    install_requires=['networkx', 'matplotlib', 'flask'],
     entry_points={
         'console_scripts': [
             'vizit=vizit:main',

@@ -11,7 +11,7 @@ CLI_JS = 'display graph in browser rather than using pyplot'
 parser = ArgumentParser(description=ABOUT_TEXT)
 
 def _get_parser():
-    parser.add_argument('-v', '--version', action='version', version='v0.1.0', help=CLI_VERSION_HELP)
+    parser.add_argument('-v', '--version', action='version', version='v0.2.3', help=CLI_VERSION_HELP)
     parser.add_argument('-d', '--dir', action='store', dest='directory', help=CLI_DIR_HELP)
     parser.add_argument('-l', '--language', action='store', dest='language', required=True, help=CLI_LANG_HELP)
     parser.add_argument('-j', '--javascript', action='store_true', dest='js', help=CLI_JS)
